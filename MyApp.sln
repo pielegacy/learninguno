@@ -11,11 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.iOS", "MyApp\MyApp.iO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.UWP", "MyApp\MyApp.UWP\MyApp.UWP.csproj", "{F6AEBFE7-60C4-4D91-A5CD-27DF8C25F214}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Wasm", "MyApp\MyApp.Wasm\MyApp.Wasm.csproj", "{903086EE-EBEF-4442-8DC9-98943C3721DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Wasm", "MyApp\MyApp.Wasm\MyApp.Wasm.csproj", "{903086EE-EBEF-4442-8DC9-98943C3721DA}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		MyApp\MyApp.Shared\MyApp.Shared.projitems*{42adc046-bb98-4475-9e99-eb552b3d454d}*SharedItemsImports = 4
 		MyApp\MyApp.Shared\MyApp.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
+		MyApp\MyApp.Shared\MyApp.Shared.projitems*{628832a8-0bdd-4786-bc61-1619f9d946e6}*SharedItemsImports = 4
+		MyApp\MyApp.Shared\MyApp.Shared.projitems*{f6aebfe7-60c4-4d91-a5cd-27df8c25f214}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

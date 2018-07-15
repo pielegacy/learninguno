@@ -1,5 +1,9 @@
-
 # Uno Quick Start
+--- 
+
+**This project is based on the Uno Quickstart and was used for this Medium article I wrote.**
+
+---
 This repository is a basic sample for an [Uno](http://platform.uno/) application which cross-targets UWP, iOS, Android and WebAssembly.
 
 Use the Visual Studio's UWP tooling on Windows, such as 

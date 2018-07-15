@@ -8,6 +8,58 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<TextBlock Text="Hello, world !" Margin="20" FontSize="30" />
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <!-- Tablet -->
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ColumnDetails.Width" Value="2*"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="ColumnPosts" Width="*"/>
+            <ColumnDefinition x:Name="ColumnDetails" Width="0"/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="ListPosts" Visibility="Visible" ItemsSource="{x:Bind Posts}" SelectionMode="Single" SelectionChanged="PostSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="2,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" FontSize="20" FontWeight="SemiBold" Text="{Binding Title}" TextWrapping="WrapWholeWords"></TextBlock>
+                        <TextBlock Grid.Row="1" Text="{Binding Summary}"></TextBlock>
+                        <StackPanel Orientation="Horizontal" Grid.Row="2">
+                            <Polygon Width="20"
+                                     Fill="Gray"
+                                     Stretch="Uniform"
+                                     Points="98,118,122,130,117,104,136,86,110,82,98,58,86,82,60,86,79,104,74,130,98,118" 
+                                     />
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="1" Margin="10,25">
+                <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="{x:Bind Path=SelectedPost.Title, Mode=OneWay}"/>
+                <TextBlock Text="{x:Bind Path=SelectedPost.Body, Mode=OneWay}"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>
